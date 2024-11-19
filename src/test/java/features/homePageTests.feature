@@ -11,5 +11,5 @@ Feature: Valido home page
 
   Scenario: Me dirijo a la página de login
     Given que estoy en la home page
-    When  presiono el boton de login
-    Then la url contiene login "login"
+    When  presiono el boton de login or register
+    Then verifico que la url contiene login "login"

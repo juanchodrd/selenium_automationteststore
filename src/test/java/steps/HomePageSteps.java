@@ -8,8 +8,6 @@ import pages.HomePage;
 import pages.LoginPage;
 import utils.DriverManager;
 
-import static org.junit.Assert.assertEquals;
-
 public class HomePageSteps {
     private HomePage homePage = new HomePage(DriverManager.getDriver()); // Pasar el WebDriver desde DriverManager
     private LoginPage loginpage = new LoginPage(DriverManager.getDriver());
@@ -40,9 +38,9 @@ public class HomePageSteps {
         Assert.assertTrue("La URL no contiene el texto esperado", actualUrl.contains(urlContain));
     }
 
-    @Then("presiono el boton de login")
-    public void presionoElBotonDeLogin() {
-        homePage.goToLoginAndRegist();
+    @Then("presiono el boton de login or register")
+    public void presionoElBotonDeLoginOrRegister() {
+        homePage.goToLoginOrRegist();
     }
 
 }
