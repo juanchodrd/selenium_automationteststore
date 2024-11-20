@@ -1,19 +1,14 @@
 Feature: Register Tests
 
+  @only
   Scenario: Registro de nuevo usuario
     Given que estoy en la home page
     When presiono el boton de login or register
     And verifico que la url contiene login "login"
     And en la pagina de login presiono el radio button register account
     And luego presiono continue
-
     And ingreso mis datos personales
-      | campo      | valor                 |
-      | First Name | Juan                  |
-      | Last Name  | Tognoli               |
-      | E-Mail     | juantognoli@gmail.com |
-      | Telephone  |                       |
-      | Fax        |                       |
+
 
 #    And ingreso mi dirección
 #      | campo       | valor               |

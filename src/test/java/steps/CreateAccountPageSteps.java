@@ -3,28 +3,29 @@ package steps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import pages.CreateAccountPage;
+import utils.DataGenerator;
 import utils.DriverManager;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class CreateAccountPageSteps {
     private CreateAccountPage createAccountPage = new CreateAccountPage(DriverManager.getDriver());
 
+
     @And("ingreso mis datos personales")
-    public void ingresoMisDatosPersonales(List<Map<String, String>> datosPersonales) {
-        // Crear un nuevo Map para organizar los datos correctamente
-        Map<String, String> datosMap = new HashMap<>();
-        for (Map<String, String> fila : datosPersonales) {
-            datosMap.put(fila.get("campo"), fila.get("valor"));
-        }
+    public void ingresoMisDatosPersonales() {
+        Map<String, String> datosPersonales = new HashMap<>();
 
-        // Imprimir el nuevo Map para verificar los datos
-        System.out.println("Datos personales reestructurados: " + datosMap);
+        // Generación automática de todos los campos
+        datosPersonales.put("First Name", "");
+        datosPersonales.put("Last Name", DataGenerator.generateRandomLastName());
+        datosPersonales.put("E-Mail", DataGenerator.generateRandomEmail());
+        datosPersonales.put("Telephone", DataGenerator.generateRandomPhone());
+        datosPersonales.put("Fax", ""); // Fax opcional, puede ser vacío o generado si es necesario
 
-        // Pasar los datos al método de la página
-        createAccountPage.ingresarDatosPersonales(datosMap);
+        // Llama al método de la página para ingresar los datos
+        createAccountPage.ingresarDatosPersonales(datosPersonales);
     }
 
 

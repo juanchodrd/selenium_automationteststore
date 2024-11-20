@@ -25,32 +25,12 @@ public class CreateAccountPage {
     }
 
     public void ingresarDatosPersonales(Map<String, String> datosPersonales) {
-        // Verificar y llenar cada campo directamente
-        String firstName = datosPersonales.get("First Name");
-        String lastName = datosPersonales.get("Last Name");
-        String email = datosPersonales.get("E-Mail");
-        String telephone = datosPersonales.get("Telephone");
-        String fax = datosPersonales.get("Fax");
-
-        if (firstName != null) {
-            elementActions.sendKeys(firstNameInput, firstName);
-        }
-        if (lastName != null) {
-            driver.findElement(lastNameInput).clear();
-            driver.findElement(lastNameInput).sendKeys(lastName);
-        }
-        if (email != null) {
-            driver.findElement(emailInput).clear();
-            driver.findElement(emailInput).sendKeys(email);
-        }
-        if (telephone != null) {
-            driver.findElement(telephoneInput).clear();
-            driver.findElement(telephoneInput).sendKeys(telephone);
-        }
-        if (fax != null) {
-            driver.findElement(faxInput).clear();
-            driver.findElement(faxInput).sendKeys(fax);
-        }
+        driver.findElement(firstNameInput).sendKeys(datosPersonales.get("First Name"));
+        driver.findElement(lastNameInput).sendKeys(datosPersonales.get("Last Name"));
+        driver.findElement(emailInput).sendKeys(datosPersonales.get("E-Mail"));
+        driver.findElement(telephoneInput).sendKeys(datosPersonales.get("Telephone"));
+        driver.findElement(faxInput).sendKeys(datosPersonales.get("Fax"));
     }
+
 
 }
