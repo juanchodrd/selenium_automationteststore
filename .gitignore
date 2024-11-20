@@ -35,6 +35,8 @@ build/
 ### Mac OS ###
 .DS_Store
 
+### Selenium ###
 /target/
 /test-output/
 /screenshots/
+/configs/config.properties
