@@ -4,9 +4,11 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import pages.LoginPage;
+import utils.ConfigFileReader;
 import utils.DriverManager;
 
 public class LoginPageSteps {
+    private static ConfigFileReader configFileReader = new ConfigFileReader();
     private LoginPage loginpage = new LoginPage(DriverManager.getDriver());
 
     @Then("verifico que la url contiene login {string}")
@@ -25,9 +27,11 @@ public class LoginPageSteps {
         loginpage.clickContinue();
     }
 
-    @And("ingreso credenciales del usuario {string} {string}")
-    public void ingresoElNombreDeUsuarioYLaClave(String user, String pass) {
-        loginpage.enterCredentials(user, pass);
+    @And("ingreso credenciales del usuario")
+    public void ingresoElNombreDeUsuarioYLaClave() {
+        String username = configFileReader.getUsername();
+        String password = configFileReader.getPassword();
+        loginpage.enterCredentials(username, password);
     }
 
     @And("presiono el boton de login")

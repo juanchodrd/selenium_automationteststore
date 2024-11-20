@@ -5,6 +5,6 @@ Feature: Login Tests
     Given que estoy en la home page
     When presiono el boton de login or register
     And verifico que la url contiene login "login"
-    And ingreso credenciales del usuario "testjdoe1" "Test0010!!"
+    And ingreso credenciales del usuario
     And presiono el boton de login
     Then veo el mensaje de bienvenida
