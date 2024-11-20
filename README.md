@@ -7,8 +7,8 @@ utilizando Selenium + Java + Cucumber.
 
 1. Clonar el repositorio
    ```bash
-   git clone <URL_DEL_REPOSITORIO>
-   cd <NOMBRE_DEL_REPOSITORIO>
+   git clone https://github.com/juanchodrd/selenium_automationteststore.git
+   cd selenium_automationteststore
    ```
 2. Instalar dependencias
    ```bash
