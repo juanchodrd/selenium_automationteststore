@@ -22,7 +22,7 @@ public class HomePage {
     // Constructor
     public HomePage(WebDriver driver) {
         this.driver = driver;
-        this.elementActions = new ElementActions(driver);  // Inicializamos elementActions
+        this.elementActions = new ElementActions(driver);  // Inicializo elementActions
     }
 
     // Método ingresar a url
